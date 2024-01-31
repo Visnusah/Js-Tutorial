@@ -2,7 +2,7 @@
 
 Hey there, fellow learners! 👋 I'm thrilled to share this comprehensive JavaScript tutorial repository with you. Whether you're a beginner diving into the world of coding or an experienced developer looking to sharpen your JavaScript skills, you've come to the right place.
 
-📚 What's Inside?
+<h3>📚 What's Inside?</h3>
 This repository is packed with interactive and hands-on JavaScript tutorials designed to make your learning journey enjoyable and rewarding. Here's a sneak peek at what you'll find:
 
 Beginner-Friendly Content: Perfect for those taking their first steps into the JavaScript universe. Concepts are explained in a clear and easy-to-understand manner.
