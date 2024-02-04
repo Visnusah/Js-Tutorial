@@ -44,3 +44,33 @@ const newString = gameName.slice(2, -4)
 console.log(newString);
 
 
+const newStringOmne = "   Kamlesh  "
+// remove extra space from characters:
+//  =>kamlesh
+console.log(newStringOmne.trim());
+
+const url = "https://sahkamlesh.com.np/home%20page"
+
+console.log(url.replace('%20','-'));
+//  => https://sahkamlesh.com.np/home-page
+
+console.log(url.includes("kamlesh"));   // To find any character in given url or groups of characters, output is in boolean
+//  => true
+
+
+const nameList = new String("Kittu-Tinu-Bhutiya-Bhutka")
+
+
+// split method
+
+console.log(nameList.split("-"));       //  
+
+console.table(nameList.split("-")); // view in table form of arrays by doing slpit
+
+// declare arrays from given string -->[String("Kittu-Tinu-Bhutiya-Bhutka")]
+
+const newList = nameList.split("-")
+
+console.table(newList);
+console.log(nameList);
+console.log(newList);
