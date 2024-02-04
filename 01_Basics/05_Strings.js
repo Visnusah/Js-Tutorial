@@ -30,8 +30,17 @@ console.log(gameName.indexOf('l')); // Find the index number of the given charac
 console.log(gameName.charAt(7));  // Find the Character of the given index number 
 // --> G
 
-const newGameName = gameName.substring(0, 2)
 
+const newGameName = gameName.substring(0, 4)  
+// K->0, a->1, m->2, l->3, e->4, s->5, h->6, G->7 and M->8
+// Start from 0 index and end in 4th index, without include 4th index
+// 
 console.log(newGameName);
+// => kaml {Output}
+
+
+const newString = gameName.slice(2, -4)    
+// Start from 2nd index which is m  and stop at -4 which is s but doesn't include -4th index.
+console.log(newString);
 
 
