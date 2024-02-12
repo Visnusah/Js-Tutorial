@@ -1,3 +1,4 @@
+
 // Create an object using constructor notation
 const user1 = new Object();
 
@@ -76,3 +77,36 @@ console.log(Object.values(user2));
 
 // Get an array of arrays containing [key, value] pairs of user2 object
 console.log(Object.entries(user2));
+
+
+//******************** Objects destructuring and JSON API ********************
+
+const course = {
+    coursename : "FUllStack Developer",
+    price : "2109",
+    courseInstructor : "Kamlesh_Shah"
+
+}
+
+
+// console.log(course.courseInstructor);
+const {courseInstructor} = course
+console.log(courseInstructor);
+
+const {coursename: shortname} = course
+console.log(shortname);
+
+// This is like JSON file, it is also shown as array only for intro!!
+
+// {
+//     "name" : "kamleshshah",
+//     "courseName" : "WEBsite degign",
+//     "price" : "free"
+// }
+
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
