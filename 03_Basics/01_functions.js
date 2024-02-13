@@ -70,6 +70,20 @@ function loginId(id){
 }
 
 // console.log(loginId());
+// console.log(loginId("kamlesh"));
 
 
 //************** ****************************//
+function loginId(id){
+    if(!id){
+        console.log("please enter ID of the user");
+        return
+    }
+    return `${id} is Logged In.`
+}
+
+// console.log(loginId());
+// console.log(loginId("kamlesh"));
+
+//************** ****************************//
+
