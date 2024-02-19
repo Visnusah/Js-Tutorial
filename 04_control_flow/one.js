@@ -5,6 +5,7 @@
 const temperature = 50;
 
 // Check if the temperature is exactly 49
+// === is used to check the value and the type of the variable
 if (temperature === 49) {
     console.log(`It's too hot today!`); // This won't be executed
 } else {
@@ -64,6 +65,8 @@ const loggedInFromGoogle = true
 
 
 // Logical AND operator and OR operator
+// AND is used to check if all the conditions are true
+// OR is used to check if any of the conditions are true
 
 if (userLoggedIn && debitCard && emailVerified && 2==2) { // this is used to check if all the conditions are true (AND)
     console.log(`Welcome to the website!`);
@@ -76,4 +79,23 @@ if (loggedInFromGoogle || debitCard || 2 == 3) { // this is used to check if any
 } else {
     console.log(`Please log in to continue!`);
 }
+
+// Nullish coalescing operator (??) : null undefined
+// if i will not want null or undefined to be assigned to the variable then i can use nullish coalescing operator 
+let val1;
+val1 = 5 ?? 10
+// val1 = null ?? 10
+// val1 = undefined ?? 15
+
+val1 = null ?? 10 ?? 15 // It will return 10 because null is not defined. It will return 15 if the null is defined before 10.
+
+console.log(val1); // this is used to check if the value is null or undefined
+
+
+// Ternary operator
+// condition ? true : false
+
+const iceTeaPrice = 100
+
+iceTeaPrice >= 100 ? console.log(`I will buy the ice tea`) : console.log(`I will not buy the ice tea`)
 
