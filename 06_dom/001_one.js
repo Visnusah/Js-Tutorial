@@ -1,43 +1,26 @@
-// This code is for practicing only do all the it yourself in your personal browser
-
-// document.getElementById();
-
-document.getElementById('title')
-document.getElementById('title').id
-document.getElementById('title').class
-document.getElementById('title').getAttribute('id')
-document.getElementById('title').setAttribute('class', 'replaced heading')
-
+// Selecting the element with id 'title'
 const title_name = document.getElementById('title')
 
-
+// Changing the background color and text color of the element with id 'title'
 title_name.style.backgroundColor = 'red'
 title_name.style.color = 'white'
 
+// Accessing different properties of the element with id 'title'
+title_name.textContent // Retrieves the text content of the element
+title_name.innerText // Retrieves the text content of the element, excluding hidden text
+title_name.innerHTML // Retrieves the HTML content of the element, including any child elements
 
+// Selecting elements using querySelector
+document.querySelector('h2') // Selects the first <h2> element in the document
+document.querySelector('#title') // Selects the element with id 'title'
+document.querySelector('.heading') // Selects the element with class 'heading'
+document.querySelector('input[type="password"]') // Selects input element with type 'password'
 
-// difference between textContent, innerHTML, innerText
-
-title_name.textContent
-title_name.innerText
-title_name.innerHTML
-
-title_name.getElementsByClassName('heading')
-
-
-document.querySelector('h2')
-document.querySelector('#title')
-document.querySelector('.heading')
-document.querySelector('input[type="password"]')
-
-
-
-document.querySelector('ul')
+// Selecting and styling a <ul> element and its child <li> element
 const myul = document.querySelector('ul')
-
-document.querySelector('li')
 const myli = document.querySelector('li')
 
+// Styling the <li> element
 myli.style.backgroundColor = 'red'
 myli.style.color = 'white'
 myli.style.fontSize = '2rem'
@@ -45,27 +28,24 @@ myli.style.borderRadius = '9px'
 myli.style.padding = '15px'
 myli.style.margin = '15px'
 
+// Selecting multiple <li> elements and styling them using forEach loop
+const templist = document.querySelectorAll('li')
 
-//************** *///************** *///************** *///************** */
-
-document.querySelectorAll('li')
-
-const templist = document.querySelectorAll('li') // gives output as a array but actually it is nodelists not a array inside nodelist there is no by default .map method in browser
-
-// it's look like a array not a array but it's feactures are like array
-templist[1].style.color = 'green' 
+// Styling individual <li> elements
+templist[1].style.color = 'green'
 templist[2].style.color = 'yellow'
 
-// Use of Foreach loop for practicing
+// Styling all <li> elements using forEach loop
+templist.forEach((newli) => {
+    newli.style.backgroundColor = 'gray'
+    newli.style.margin = '20px'
+    newli.style.padding = '10px'
+    newli.style.borderRadius = '15px'
+})
 
-templist.forEach( (l) => (l.style.backgroundColor = 'gray',
-                            l.style.margin = '20px'
-))
+// Selecting elements by class name and styling them
+const tempNameList = document.getElementsByClassName('list-items')
 
-
-
-
-
-
-
-
+// Converting HTMLCollection to Array and styling each element
+const arrTempNameList = Array.from(tempNameList)
+arrTempNameList.forEach((temparr) => (temparr.style.color = 'orange'))
