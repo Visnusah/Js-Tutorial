@@ -17,13 +17,13 @@ form.addEventListener('submit', function(event){
         const bmi = (weight / (height * height / 10000)).toFixed(2)
 
         //show output
-        results.innerHTML = `<span>Your BMI is ${bmi} </span>`
+        const abc = (results.innerHTML = `<span>Your BMI is ${bmi} </span>`)
 
         if (bmi < 18.6) {
-            results.innerHTML = `<span>Your BMI is ${bmi}<br>And you are under weight </span>`
+            results.innerHTML = `<span>${abc}<br>And you are under weight </span>` // one method
         } else if (bmi > 18.6 && bmi < 24.9){
             
-            results.innerHTML = `<span>Your BMI is ${bmi} <br>And you are normal. </span>`
+            results.innerHTML = `<span>Your BMI is ${bmi} <br>And you are normal. </span>` // another method
         } else {
             results.innerHTML = `<span>Your BMI is ${bmi} <br>And you are overweight. </span>`
         }
