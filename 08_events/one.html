@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amaging images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+    <script> 
+    //FIXME: this approach is good but it has limited functionality
+        // document.getElementById('owl').onclick = function(){
+        //     alert("Owl clicked");
+        // }
+    // another best approach: but there are also many more!!
+
+    // TODO: 
+    //  document.getElementById('owl').addEventListener('click', function(){
+    //     alert("Owl is clicked again!");
+    // })
+    // Another approach like  -> attachEvent() , -> jQuery - on(framework for )
+
+    //TODO:  type, preventDefault, target, toElement, srcElement, currentTarget, 
+    // TODO: clientX, clientY, screenX, screenY
+    //TODO: altkey, ctrlkey, shiftkey, keyCode
+
+    //bubling , and capturing 
+    // document.getElementById('images').addEventListener('click', function(event){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(event){
+    //     console.log("clicked inside the owl");
+    //     event.stopPropagation();
+    // }, false)
+
+    // FIXME: PreventDefault
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     console.log("Google clicked!");
+    // },false)
+
+
+
+    //TODO: erase images by clicking on them
+/*
+    document.querySelector('#images').addEventListener('click', function(event){
+       // //1. console.log(event.target.parentNode);
+        let remoreImg = event.target.parentNode
+        remoreImg.remove(); // easy method
+        
+       // //2. remoreImg.parentNode.removeChild(remoreImg); // another method but a little bit confusing for beginner
+    },false)
+*/
+
+    // same question as above: FIXME: remove only images not whole ul
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target.tagName); // to check that what is inside the console
+        if(e.target.tagName == 'IMG'){
+            let removeIMG = e.target.parentNode
+            removeIMG.remove();
+        }   
+    },false)
+    </script>
+</body>
+</html>
