@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>Kamlesh and js</h1>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+</body>
+<script>
+  //# method 01 basics for setInterval
+  setInterval(function(){
+    console.log("Hello");
+  },10000) // after 3 second {IN milisecond}
+  
+  //# method 02 basics for setInterval
+  const name = function(){
+    console.log("Hello, kamlesh");
+  }
+  // setInterval(name, 1000) // after 1 second {IN milisecond}
+  
+  
+  //# method 03 basics for setInterval
+  const sayDate = function(str){
+    console.log(str, Date.now());
+  }
+  // setInterval(sayDate, 10000, "Hi");
+  
+  //# method 01 basics for clearInterval
+  // const intervalId = setInterval(sayDate, 1000, "Hi");
+
+  // clearInterval(intervalId)
+
+</script>
+</html>
