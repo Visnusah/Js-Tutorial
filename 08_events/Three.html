@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConsoleList</title>
+</head>
+<body>
+  <h1>Hello Coder!</h1>
+  <button style="width: 120px; font-size: 30px; border-radius: 10px; background-color: gray; color: rgb(81, 228, 23);" id="start">Start</button>
+    <button style="width: 120px; font-size: 30px; border-radius: 10px; background-color: gray; color: rgb(40, 222, 125); " id="stop">stop</button>
+</body>
+<script>
+let intervalId
+
+const startChange = function(){
+  intervalId = setInterval(datechange, 1000);
+
+  function datechange(){
+    console.log(Date.now(), "HI");
+  }
+  
+}
+const stopChange = function(){
+  clearInterval(intervalId)
+}
+
+document.querySelector('#start').addEventListener('click', startChange)
+
+
+document.querySelector('#stop').addEventListener('click', stopChange)
+
+</script>
+</html>
