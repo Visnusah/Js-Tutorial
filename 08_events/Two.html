@@ -10,15 +10,22 @@
   <button id="stop">Stop</button>
 </body>
 <script>
-  settimeout(()=>{
-    
-  },1000);
+  // # Method 01
+  setTimeout(function(){
+    console.log("Ka");
+  },2000) // This is done in one time only after given time
+  
+  // # Method 02
+  const changeName = function () {
+    document.querySelector('h1').innerHTML = "Best js course"    
+  }
 
-  settimeout(()=>{
+  const changeMe = setTimeout(changeName, 2000)
 
-  },1000)
-  settimeout(function name(itel){
-    fu
-  },1000)
+  // # How to stop event before given time
+  document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)
+    console.log("Stopped");
+  })
 </script>
 </html>

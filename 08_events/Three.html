@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Chai aur code</h1>
+  <button id="stop">Stop</button>
+  <button id="start">Start</button>
+</body>
+<script>
+
+
+  const mkk = function(eve){
+    console.log(eve, Date.now());
+  }
+  
+  // # start
+const clear = document.querySelector('#start').addEventListener('click', function(){
+  const fast = setInterval(mkk, 1000, "Hi");
+  document.querySelector('body').style.background = 'red';
+
+  // # Stop
+  document.querySelector('#stop').addEventListener('click', function(){
+    clearInterval(fast);
+    document.querySelector('body').style.background = 'white'
+    console.log("Stopped");
+  })
+})
+</script>
+</html>
