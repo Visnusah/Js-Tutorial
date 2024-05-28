@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGchange</title>
+  <style>
+    .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  
+
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img  src="./items/img_avatar.svg" alt="Avatar" style="width:20%">
+    <div class="container">
+    </div>
+  </div>
+
+
+  <h1> click start begin BGcolour change </h1>
+  <div style="margin: 10px; padding: 10px;">
+    <button id="start" style="font-weight: 600; font-size: 20px;">Start</button>
+  <button id="stop" style="font-weight: 600; font-size: 20px;">Stop</button>
+  </div>
+
+  
+  
+</body>
+
+<script>
+
+//Generate a random color 
+
+const changeColor = function(){
+ const hex = "0123456789ABCDEF";
+ let color = "#";
+ for(let i = 0; i < 6; i++){
+  color += hex[Math.floor(Math.random()*16)]
+ }
+ return color;
+};
+
+let intervalId
+const startChangingColor = function(){
+  if(!intervalId){
+    intervalId = setInterval(ChangeBGcolor, 1000);
+  }
+  function ChangeBGcolor(){
+    document.querySelector('.card').style.backgroundColor = changeColor();
+    document.querySelector('h1').style.color = changeColor();
+  }
+};
+
+const stopChangingColor = function(){
+  clearInterval(intervalId);
+  intervalId = null;
+  console.log("Stopped");
+
+}
+
+document.querySelector('#start').addEventListener('click', startChangingColor)
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor)
+
+
+</script>
+</html>
