@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Request Example</title>
+</head>
+<body>
+
+  <script>
+    const requestUrl = 'https://api.github.com/users/visnusah';
+    const xhr = new XMLHttpRequest();
+    // xhr.open('GET', 'https://api.github.com/users/visnusah')
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        // console.log(xhr.responseText);
+        const data01 = this.responseText
+        console.log(data01); //string so we need to parse it
+        console.log(typeof data01); //string
+        console.log(data01.followers); //undefined because data is string
+        
+        
+        // convert string to object using JSON.parse to get followers from api(we can also use JSON.stringify to convert object to string)
+        
+        // const data02 = JSON.parse(this.responseText)
+        const data02 = JSON.parse(this.responseText)
+        console.log(data02);
+        console.log(typeof data02); //object
+        console.log(data02.followers); // total followers = 12 (as per my github account)
+      }
+    }
+    // console.log("HERE");
+    // console.log(xhr.readyState);
+    xhr.send();
+  </script>
+</body>
+</html>
