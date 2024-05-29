@@ -136,8 +136,8 @@ consumePromise06(); // call the async function
   //   try {
   //     const response = await fetch('https://api.github.com/users/visnusah') // fetch is a method to make http request
   //     const data = await response.json(); // response.json() is a method to convert response to json
-  //     // console.log(response); // this will show the response object
-  //     console.log(data); // this will show the data object
+  //     // console.log(response); // this will show the response object 
+  //     console.log(data); // this will show the data object in json format
   //   } catch (error) {
   //     console.log("Error:", error);
   //   }
