@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React</title>
+</head>
+<body>
+  <button>Click here</button>
+  <script>
+    // Define a class named React
+    class React {
+      constructor(){
+        // Properties of the class
+        this.library = "React"  // Name of the library
+        this.server = "https://localhost:3000"  // Server URL
+
+        // Adding an event listener to the button
+        document
+        .querySelector('button')  // Selects the button element
+        .addEventListener('click', this.hancleClick
+        .bind(this));  // Binds the handleClick method to the class context and listens for click events
+      }
+      
+      // Method to handle click events
+      hancleClick(){
+        console.log("Button clicked");  // Logs message to console when button is clicked
+        console.log(this.server);  // Logs the server URL to console
+      }
+    }
+    // Create an instance of the React class
+    const app = new React();
+  </script>
+</body>
+</html>
