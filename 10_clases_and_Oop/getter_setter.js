@@ -18,7 +18,7 @@ class User {
   }
 }
 
-const kamlesh = new User('exa@google.com', '1234');
+const kamlesh = new User("exa@google.com", "1234");
 console.log(kamlesh.email); // This will cause a stack overflow error
 
 // *************************************************************************************************
@@ -39,22 +39,29 @@ class User01 {
   }
 }
 
-const Visnu = new User01('visnu@google.com', '#KKKK');
+const Visnu = new User01("visnu@google.com", "#KKKK");
 console.log(Visnu.email); // Outputs: VISNU@GOOGLE.COM
 
 // *************************************************************************************************
-
-
 
 /**
 
 ### Explanation
 
 
-In JavaScript, when using getters and setters, it's important to avoid naming conflicts between the property names and the methods used to access them. In the first class (`User`), the use of the same property name for both the internal storage and the getter/setter methods leads to a recursive call, causing a stack overflow error. This is because setting the property calls the setter again, which then tries to set the property again, and so on.
+In JavaScript, when using getters and setters, it's important to avoid naming 
+conflicts between the property names and the methods used to access them.
+In the first class (`User`), the use of the same property name for both 
+the internal storage and the getter/setter methods leads to a recursive call,
+causing a stack overflow error. This is because setting the property calls the
+ setter again, which then tries to set the property again, and so on.
 
 
 
-In the corrected class (`User01`), the internal storage of the email is done using a different property name (`_email`), which is a common convention to indicate that the property should not be accessed directly outside of the class methods. This avoids the recursive issue and allows the getter and setter to function correctly, providing controlled access to the property while encapsulating the actual data storage.
+In the corrected class (`User01`), the internal storage of the email is done using
+a different property name (`_email`), which is a common convention to indicate that
+the property should not be accessed directly outside of the class methods. This avoids
+the recursive issue and allows the getter and setter to function correctly, providing
+controlled access to the property while encapsulating the actual data storage.
   
  */
