@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #313131;">
+    <button id="orange">Change</button>
+    <button id="green">Green</button>
+
+  // *****************************************************
+  // closure concept
+
+    <script>
+      function makeFunc() {
+        let name = "Mozilla";
+        function displayName() {
+          console.log(name);
+        }
+        return displayName;        
+      }
+      const myFunc = makeFunc();
+      myFunc();
+// *****************************************************
+
+    function outer() {
+      let username = "Kamlesh"
+      // console.log(secret); // ReferenceError: secret is not defined
+      // child scope can access parent scope but parent scope can't access child scope
+      function inner() {
+        let secret = "my12345";
+        console.log(`Inner`,username);
+      }
+      function innerTwo(){
+        console.log(`TOO INNER`,username);
+        // console.log(secret); // ReferenceError: secret is not defined (because secret is not defined in this scope)
+      }
+
+      inner();
+      innerTwo();
+    }
+    outer();
+    console.log(`TOO OUTER`,username);
+    </script>
+    <script>
+// *****************************************************
+// simple method to change background color
+
+        document.getElementById('orange').onclick = function(){
+        document. body.style.backgroundColor = "Orange";
+        }
+        document.getElementById('green').onclick = function(){
+        document. body.style.backgroundColor = "Green";
+        }
+// *****************************************************
+// closure concept and lexical scope
+
+        function ClickHander(color) {
+          // document.body.style.backgroundColor = `${color}`;      // this is not closure
+          return function(){
+            document.body.style.backgroundColor = `${color}`;
+          }
+        }
+        document.getElementById('orange').onclick = ClickHander('orange');
+        document.getElementById('green').onclick = ClickHander('Green');
+  
+// *****************************************************
+
+// another method to do the same thing as above code
+// simple but other concept not lexical scope
+
+
+    function ClickHander(color) {
+      document.body.style.backgroundColor = `${color}`;          
+    }
+    document.getElementById('orange').onclick = function(){
+      ClickHander('orange');
+    }
+    document.getElementById('green').onclick = function(){
+      ClickHander('Green');
+    }
+</script>
+  </body>
+</html>
