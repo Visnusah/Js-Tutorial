@@ -23,7 +23,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/Js-Tutorial.git
+[git clone https://github.com/your-username/Js-Tutorial.git](https://github.com/Visnusah/Js-Tutorial.git)
 Explore the Tutorials:
 Navigate through the folders, starting with the basics and progressing to more advanced topics. Each tutorial comes with code examples, explanations, and challenges to reinforce your learning.
 
